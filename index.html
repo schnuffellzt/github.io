@@ -1,0 +1,307 @@
+	<!DOCTYPE html>	
+	<html lang="ru">
+	<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <meta http-equiv="Cache-control" content="public">
+
+    <title>Schnuffel</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+        @font-face {
+            font-style: normal;
+            font-family: 'NAMU Pro';
+            src: url(fonts/NAMU-Pro.woff2);
+            font-display: swap;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 15px;
+            background-color: #363636;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            font-family: 'NAMU Pro';
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #23a86d;
+        }
+
+        h1 img {
+            height: 32px;
+            image-rendering: -webkit-optimize-contrast;
+            position: relative;
+            top: 3px;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+			background: linear-gradient(89deg, rgba(255, 51, 204) 48.47%, #fff 90.47%, #fff 0.25%), rgba(255, 51, 204);    
+			-webkit-background-clip: text;    
+			-webkit-text-fill-color: transparent;
+			text-shadow: 0px 0px 5px rgb(255 55 205);    
+			-webkit-background-clip:text
+        }
+
+        p {
+            font-size: 18px;
+			color: white;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: auto;
+            padding: 0 30px 100px;
+        }
+
+        .links {
+            margin-top: 30px;
+        }
+
+        .links__item {
+            border: 1px solid rgba(0, 0, 0, .1);
+            width: 100%;
+            display: flex;
+            align-items: center;
+            padding: 20px 25px;
+            position: relative;
+            background-color: #272727;
+            margin-top: -1px;
+        }
+
+        .links__item:first-child, .links__item.is-first {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .links__item:last-child, .links__item.is-last {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .links__item:hover {
+            background: rgba(0, 0, 0, .05);
+        }
+
+        .links__item img {
+            width: 28px;
+            margin-right: 20px;
+            image-rendering: -webkit-optimize-contrast;
+        }
+
+        .links__item h3 {
+            position: relative;
+            font-size: 28px;
+            top: -3px;
+        }
+
+        .links__item.is-alt h3 {
+            top: -1px;
+        }
+
+        .links__item.has-sub h3 {
+            top: -2px;
+        }
+
+        .links__item h3 span {
+            font-family: 'Roboto';
+            font-weight: 500;
+        }
+
+        .links__item h5 {
+            margin-left: 15px;
+            border-left: 1px solid rgba(255, 255, 255, .1);
+            padding: 5px 15px;
+            color: rgba(255, 255, 255, .5);
+            font-weight: 500;
+        }
+
+        .links__item h5 ion-icon {
+            position: relative;
+            top: 2px;
+            margin-right: 2px;
+        }
+
+        .links__item h5 span {
+            margin-right: 5px;
+        }
+
+        .links__item > ion-icon {
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            transform: translateY(-50%);
+            font-size: 24px;
+            color: rgba(255, 255, 255, .5);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed rgba(0255, 0, 0, .1);
+            width: 240px;
+            margin: 30px auto;
+        }
+
+
+        @media (max-width: 1024px) {
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            .links__item {
+                padding: 15px 20px;
+            }
+
+            .links__item img {
+                width: 21px;
+                margin-right: 15px;
+            }
+
+            .links__item h3 {
+                font-size: 16px;
+            }
+
+            .links__item h5 {
+                padding-right: 0;
+            }
+
+            .links__item > ion-icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .links {
+                margin-left: -25px;
+                margin-right: -25px;
+            }
+
+            .links__item img {
+                margin-left: 2px;
+            }
+
+            .links__item {
+                border-top-left-radius: 0 !important;
+                border-top-right-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+                border-bottom-right-radius: 0 !important;
+                border-left: none;
+                border-right: none;
+            }
+        }
+        
+        @media (max-width: 350px) {
+            h2 {
+                font-size: 2rem;
+            }
+
+            .links__item h5 {
+                font-size: 10px;
+            }
+
+            .links__item {
+                padding: 10px 15px;
+            }
+
+            .links__item img {
+                margin-left: 7px;
+            }
+
+            .header {
+                height: 150px;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+	<hr>
+	<hr>
+	<hr>
+	<hr>
+	<hr>
+	<hr>
+	<hr>
+    <div class="container">
+        <h1>Welcome <img src="images/hand.png" alt="👋"></h1>
+        <h2>Schnuffel</h2>
+        <p>Here are links to all my social networks and projects.</p>
+
+        <div class="links">
+            <a class="links__item has-sub" target="_blank" href="https://www.lolz.guru/schnuffel/">
+                <img src="images/lzt.png">
+                <h3>lolzteam</h3>
+
+                <h5>
+                    <span><ion-icon name="heart"></ion-icon> 170</span>
+                    <span><ion-icon name="chatbubbles"></ion-icon> 149</span>
+                </h5>
+
+                <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+            <a class="links__item has-sub" target="_blank" href="https://t.me/bunnyf4">
+                <img src="images/telegram.png">
+                <h3>telegram</h3>
+                
+                <h5>
+					<span> на "привет", "ку" не отвечаю</span>
+                </h5>
+
+                <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+			<a class="links__item is-last" target="_blank" href="https://github.com/schnuffellzt">
+                <img src="images/github.png">
+                <h3>github</h3>
+                
+                <h5>
+                    
+                </h5>
+
+                <ion-icon name="chevron-forward"></ion-icon>
+            </a>
+            <hr>
+			<!-- <a class="links__item is-last" target="_blank" href="https://github.com">
+                <img src="images/github.png">
+                <h3>github</h3>
+                
+                <h5>
+                    
+                </h5>
+
+                <ion-icon name="chevron-forward"></ion-icon> -->
+            </a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" defer></script>
+</body>
+</html>
